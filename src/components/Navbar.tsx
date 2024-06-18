@@ -14,6 +14,8 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, SearchIcon } from "@chakra-ui/icons";
+import { IoMdHeart } from "react-icons/io";
+import MobileNav from "../sections/MobileNav";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -51,9 +53,13 @@ export default function Navbar() {
             w="2.5rem"
           />
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            {/* <DesktopNav /> */}
-            <Select placeholder="category">
+          <Flex
+            display={{ base: "none", md: "flex" }}
+            ml={10}
+            justify={"space-between"}
+            w="25rem"
+          >
+            <Select placeholder="category" w="10rem">
               <option value="business">Business</option>
               <option value="entertainment">Entertainment</option>
               <option value="health">Health</option>
@@ -61,6 +67,17 @@ export default function Navbar() {
               <option value="sports">Sports</option>
               <option value="technology">Technology</option>
             </Select>
+            <Button
+              bg="#E53E3E"
+              color="#ffffff"
+              _hover={{
+                background: "white",
+                color: "#E53E3E",
+              }}
+              leftIcon={<IoMdHeart />}
+            >
+              Favorites
+            </Button>
           </Flex>
         </Flex>
 
@@ -90,22 +107,3 @@ export default function Navbar() {
     </Box>
   );
 }
-
-const MobileNav = () => {
-  return (
-    <Stack
-      bg={useColorModeValue("white", "gray.800")}
-      p={4}
-      display={{ base: "flex", md: "none" }}
-      direction="column"
-      spacing={4}
-    >
-      <Button>Business</Button>
-      <Button>Entertainment</Button>
-      <Button>Health</Button>
-      <Button>Science</Button>
-      <Button>Sports</Button>
-      <Button>Technology</Button>
-    </Stack>
-  );
-};

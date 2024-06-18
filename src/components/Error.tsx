@@ -23,7 +23,7 @@ const Error = () => {
         <Text fontSize="lg" color="gray.700">
           {error?.data || error?.message || "An unknown error occurred."}
         </Text>
-        <Button onClick={() => navigate(-1)} colorScheme="teal" variant="solid">
+        <Button onClick={() => navigate(-1)} bg="#C53030" variant="solid">
           &larr; Go back
         </Button>
       </VStack>
