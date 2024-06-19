@@ -3,6 +3,7 @@ import { IoMdBriefcase } from "react-icons/io";
 import { SidebarButton } from "../sections/SidebarButton";
 import { FaDesktop, FaPlusCircle, FaFilm } from "react-icons/fa";
 import { MdOutlineSportsBaseball } from "react-icons/md";
+import NewsList from "../components/NewsList";
 const Home = () => {
   return (
     <>
@@ -25,12 +26,9 @@ const Home = () => {
           />
           <SidebarButton text="Technology" buttonIcon={<FaDesktop />} />
         </Box>
-        <Box
-          h="100%"
-          w="80%"
-          border={"1px solid red"}
-          m={{ base: "auto" }}
-        ></Box>
+        <Box h="100%" w="80%" border={"1px solid red"} m={{ base: "auto" }}>
+          <NewsList />
+        </Box>
       </Flex>
     </>
   );

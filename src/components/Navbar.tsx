@@ -16,10 +16,10 @@ import {
 import { HamburgerIcon, CloseIcon, SearchIcon } from "@chakra-ui/icons";
 import { IoMdHeart } from "react-icons/io";
 import MobileNav from "../sections/MobileNav";
-
+import { useNavigate } from "react-router-dom";
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
-
+  const navigate = useNavigate();
   return (
     <Box>
       <Flex
@@ -51,6 +51,8 @@ export default function Navbar() {
           <Image
             src="https://img.freepik.com/free-vector/gradient-breaking-news-logo-design_23-2151274659.jpg?t=st=1718729682~exp=1718733282~hmac=7ad227c8c8bad7176fbaabeb1aa287dfe1f6236fee66c52d78a1a4c62e8c9dba&w=740"
             w="2.5rem"
+            onClick={() => navigate("/")}
+            cursor={"pointer"}
           />
 
           <Flex
@@ -75,6 +77,7 @@ export default function Navbar() {
                 color: "#E53E3E",
               }}
               leftIcon={<IoMdHeart />}
+              onClick={() => navigate("/favorites")}
             >
               Favorites
             </Button>
